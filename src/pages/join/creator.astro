@@ -12,7 +12,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
 <BaseLayout
   title="Join as Creator"
-  description="Apply to join KOLPlanet as a creator. Share your profile, social accounts, and categories to get matched with brand campaigns in India and Southeast Asia."
+  description="Join KOLPlanet as a creator in India and Southeast Asia. Share your profile and social accounts to get brand campaign offers."
   robots="noindex, follow"
   bare
 >
@@ -26,12 +26,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     <div class="creator-join-page__shell">
       <header class="creator-join-page__intro">
         <h1>Join as Creator</h1>
-        <p>Apply to join KOLPlanet and get matched with brand campaigns in your market.</p>
+        <p>Join KOLPlanet to work with brands in India & Southeast Asia.</p>
       </header>
 
       <CreatorJoinForm />
     </div>
-    <FormSuccessToast title="Application sent" />
+    <FormSuccessToast title="Application submitted" />
   </div>
 </BaseLayout>
 
@@ -541,11 +541,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     const tag = normalizeTag(raw);
     if (!tag) return false;
     if (selectedTags.some((item) => item.toLowerCase() === tag.toLowerCase())) {
-      setStatus('Tag already added.', 'info');
+      setStatus('This tag is already added.', 'info');
       return false;
     }
     if (selectedTags.length >= maxTags) {
-      setStatus(`Up to ${maxTags} tags.`, 'info');
+      setStatus(`You can add up to ${maxTags} tags.`, 'info');
       return false;
     }
     selectedTags.push(tag);
@@ -659,7 +659,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     const icon = row.querySelector('[data-platform-icon]');
     const platform = platformByName(name);
     if (input instanceof HTMLInputElement) input.value = name || '';
-    if (label) label.textContent = name || 'Choose platform';
+    if (label) label.textContent = name || 'Select platform';
     row.querySelector('[data-platform-toggle]')?.classList.toggle('is-empty', !name);
     row.querySelector('.creator-join-form__field--platform')?.classList.remove('is-invalid');
     input?.classList.remove('is-invalid');
@@ -749,7 +749,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!socialList || !socialTemplate || !(socialTemplate instanceof HTMLTemplateElement)) return;
     const count = socialList.querySelectorAll('[data-social-item]').length;
     if (count >= maxSocials) {
-      setStatus(`Up to ${maxSocials} platforms.`, 'info');
+      setStatus(`You can add up to ${maxSocials} platforms.`, 'info');
       if (addSocial) addSocial.hidden = true;
       return;
     }
@@ -801,8 +801,8 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     const checked = categories.querySelectorAll('input:checked');
     if (checked.length > 3) {
       target.checked = false;
-      setStatus('Up to 3 categories.', 'info');
-    } else if (status?.textContent === 'Up to 3 categories.') {
+      setStatus('You can pick up to 3 categories.', 'info');
+    } else if (status?.textContent === 'You can pick up to 3 categories.') {
       setStatus('');
     }
   });
@@ -829,7 +829,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!collabs || !collabTemplate || !(collabTemplate instanceof HTMLTemplateElement)) return;
     const count = collabs.querySelectorAll('[data-collab-item]').length;
     if (count >= 3) {
-      setStatus('Up to 3 collaborations.', 'info');
+      setStatus('You can add up to 3 collaborations.', 'info');
       if (addCollab) addCollab.hidden = true;
       return;
     }
@@ -948,7 +948,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!scopeList || !scopeTemplate || !(scopeTemplate instanceof HTMLTemplateElement)) return;
     const count = scopeList.querySelectorAll('[data-scope-item]').length;
     if (count >= maxScopes) {
-      setStatus(`Up to ${maxScopes} scopes.`, 'info');
+      setStatus(`You can add up to ${maxScopes} rates.`, 'info');
       closeScopeMenu();
       syncScopeUi();
       return;
@@ -1049,7 +1049,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (birthday instanceof HTMLInputElement && birthday.value.trim() && !isValidBirthday(birthday.value.trim())) {
       markInvalid(birthday);
       focusInvalid(birthday);
-      setStatus('Use YYYY-MM-DD for date of birth.', 'info');
+      setStatus('Please use YYYY-MM-DD for birthday.', 'info');
       return false;
     }
 
@@ -1166,9 +1166,9 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       const draft = collectDraft();
       if (!draft) return;
       localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-      setStatus('Draft saved on this device.', 'success');
+      setStatus('Draft saved on this phone.', 'success');
     } catch {
-      setStatus('Unable to save draft in this browser.', 'error');
+      setStatus('Could not save draft in this browser.', 'error');
     }
   };
 
@@ -1363,8 +1363,8 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
     try {
       if (rateCardFile) {
-        setCreatorSubmitting(true, 'Preparing…');
-        setStatus('Preparing photo…', 'info');
+        setCreatorSubmitting(true, 'Uploading…');
+        setStatus('Uploading photo…', 'info');
         const attachment = await prepareRateCardFile(rateCardFile);
         if (attachment) payload.set('rateCard', attachment);
         setCreatorSubmitting(true);
@@ -1376,7 +1376,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
         headers: { Accept: 'application/json' },
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.message || 'Unable to submit your application.');
+      if (!response.ok) throw new Error(result.message || 'Could not submit. Please try again.');
 
       form.reset();
       resetDynamicFields();
@@ -1389,9 +1389,9 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       syncWhatsappDial();
       updateRatePlaceholders();
       setStatus('', 'success');
-      showCreatorSuccess('Thanks — your application has been sent. We’ll be in touch.');
+      showCreatorSuccess('Thanks! We got your application. We will contact you soon.');
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : 'Unable to submit your application.', 'error');
+      setStatus(error instanceof Error ? error.message : 'Could not submit. Please try again.', 'error');
     } finally {
       setCreatorSubmitting(false);
     }

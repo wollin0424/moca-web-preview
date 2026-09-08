@@ -181,7 +181,7 @@ const tagSuggestions = [
 
 const rateScopeGroups = [
   {
-    label: 'Standard Deliverables',
+    label: 'Common Content',
     items: [
       'IG Reel',
       'IG Story',
@@ -198,7 +198,7 @@ const rateScopeGroups = [
     ],
   },
   {
-    label: 'Add-ons & Rights',
+    label: 'Extra Options',
     items: [
       'Content Usage (Digital)',
       'Post Retention',
@@ -229,16 +229,16 @@ const rateScopeGroups = [
   <div class="creator-join-form__card">
     <section class="creator-join-form__section">
       <h2>About You</h2>
-      <p class="creator-join-form__hint">Basic info brands see on your profile.</p>
+      <p class="creator-join-form__hint">This is what brands see on your profile.</p>
       <label class="creator-join-form__field">
         <span>Creator Name <i aria-hidden="true">*</i></span>
-        <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your public creator name" data-required />
+        <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your name as a creator" data-required />
       </label>
       <div class="creator-join-form__row">
         <label class="creator-join-form__field">
           <span>Gender</span>
           <select name="gender">
-            <option value="" selected disabled hidden>Choose one</option>
+            <option value="" selected disabled hidden>Select gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -253,7 +253,7 @@ const rateScopeGroups = [
         <label class="creator-join-form__field">
           <span>Country <i aria-hidden="true">*</i></span>
           <select name="country" autocomplete="country-name" required data-country data-required>
-            <option value="" selected disabled hidden>Choose country</option>
+            <option value="" selected disabled hidden>Select country</option>
             {countries.map((item) => (
               <option value={item.name}>{item.name}</option>
             ))}
@@ -284,7 +284,7 @@ const rateScopeGroups = [
             class="creator-join-form__combo-input"
             type="text"
             maxlength="80"
-            placeholder="Choose from list"
+            placeholder="Select language"
             autocomplete="off"
             data-combo-input
             aria-autocomplete="list"
@@ -299,14 +299,14 @@ const rateScopeGroups = [
 
     <section class="creator-join-form__section">
       <h2>Contact</h2>
-      <p class="creator-join-form__hint">How we reach you about campaign opportunities.</p>
+      <p class="creator-join-form__hint">How we contact you for brand work.</p>
       <label class="creator-join-form__field">
         <span>Email <i aria-hidden="true">*</i></span>
         <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@email.com" data-required />
       </label>
       <div class="creator-join-form__field">
         <span>WhatsApp</span>
-        <p class="creator-join-form__hint creator-join-form__hint--inline">Country code updates when you pick a country above.</p>
+        <p class="creator-join-form__hint creator-join-form__hint--inline">Code changes when you select your country.</p>
         <div class="creator-join-form__whatsapp">
           <span class="creator-join-form__whatsapp-dial" data-whatsapp-dial>—</span>
           <input type="hidden" name="whatsappDial" value="" data-whatsapp-dial-value />
@@ -315,7 +315,7 @@ const rateScopeGroups = [
             type="tel"
             inputmode="numeric"
             maxlength="20"
-            placeholder="Mobile number"
+            placeholder="Phone number"
             autocomplete="tel-national"
             data-whatsapp-number
           />
@@ -327,7 +327,7 @@ const rateScopeGroups = [
   <div class="creator-join-form__card">
     <section class="creator-join-form__section" data-validate-block="socials">
       <h2>Social Accounts <i aria-hidden="true">*</i></h2>
-      <p class="creator-join-form__hint">Add at least one platform. Profile link or @handle both work.</p>
+      <p class="creator-join-form__hint">Add at least 1 account. Link or @username both OK.</p>
       <div class="creator-join-form__socials" data-social-list></div>
       <button class="creator-join-form__add" type="button" data-add-social>
         <span aria-hidden="true">+</span> Add Platform
@@ -345,7 +345,7 @@ const rateScopeGroups = [
                 data-platform-toggle
               >
                 <img class="creator-join-form__platform-icon" alt="" hidden data-platform-icon />
-                <span data-platform-label>Choose platform</span>
+                <span data-platform-label>Select platform</span>
               </button>
               <input type="hidden" value="" data-social-platform />
               <ul class="creator-join-form__platform-list" role="listbox" hidden data-platform-list></ul>
@@ -353,7 +353,7 @@ const rateScopeGroups = [
           </div>
           <label class="creator-join-form__field creator-join-form__field--handle">
             <span class="sr-only">Account or Link</span>
-            <input type="text" maxlength="300" placeholder="@username or profile URL" data-social-handle />
+            <input type="text" maxlength="300" placeholder="@username or profile link" data-social-handle />
           </label>
           <button class="creator-join-form__remove" type="button" data-remove-social aria-label="Remove platform">
             ×
@@ -366,7 +366,7 @@ const rateScopeGroups = [
   <div class="creator-join-form__card">
     <section class="creator-join-form__section">
       <h2>Categories</h2>
-      <p class="creator-join-form__hint">Multi-select · pick up to 3 content areas.</p>
+      <p class="creator-join-form__hint">Pick up to 3 topics you create content about.</p>
       <div class="creator-join-form__chips" data-creator-categories>
         {
           categories.map((item) => (
@@ -384,7 +384,7 @@ const rateScopeGroups = [
 
     <section class="creator-join-form__section">
       <h2>Tags</h2>
-      <p class="creator-join-form__hint">Multi-select · up to 5. Tap suggestions or type your own.</p>
+      <p class="creator-join-form__hint">Add up to 5 tags. Tap a suggestion or type your own.</p>
       <div class="creator-join-form__tags" data-tag-field>
         <div class="creator-join-form__tag-list" data-tag-list></div>
         <div class="creator-join-form__tag-input-wrap">
@@ -415,7 +415,7 @@ const rateScopeGroups = [
         <label class="creator-join-form__field">
           <span>Currency</span>
           <select name="currency" data-currency>
-            <option value="" selected disabled hidden>Choose currency</option>
+            <option value="" selected disabled hidden>Select currency</option>
             {currencies.map((item) => (
               <option value={item}>{item}</option>
             ))}
@@ -436,7 +436,7 @@ const rateScopeGroups = [
                 <path d="M6.5 16.5v1.2c0 .7.6 1.3 1.3 1.3h8.4c.7 0 1.3-.6 1.3-1.3v-1.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
               </svg>
             </span>
-            <span>Upload rate card</span>
+            <span>Upload your rate card</span>
             <small>Photo, screenshot, or PDF. Not saved in draft.</small>
           </label>
           <div class="creator-join-form__upload-preview" hidden data-rate-preview>
@@ -453,19 +453,19 @@ const rateScopeGroups = [
         <div class="creator-join-form__scopes">
           <div class="creator-join-form__scopes-head">
             <h2>
-              Plan Scope
+              Your Rates
               <b data-scope-count hidden>0</b>
             </h2>
             <div class="creator-join-form__scope-add" data-scope-picker>
               <button class="creator-join-form__add" type="button" data-add-scope>
-                <span aria-hidden="true">+</span> Add Scope
+                <span aria-hidden="true">+</span> Add Rate
               </button>
               <div class="creator-join-form__scope-menu" hidden data-scope-menu>
                 <div class="creator-join-form__scope-groups" data-scope-options></div>
               </div>
             </div>
           </div>
-          <p class="creator-join-form__hint" data-scope-empty>Optional · add deliverables you can price.</p>
+          <p class="creator-join-form__hint" data-scope-empty>Optional. Add what you can offer and your price.</p>
           <div class="creator-join-form__scope-list" data-scope-list></div>
           <template data-scope-template>
             <div class="creator-join-form__scope" data-scope-item>
@@ -480,7 +480,7 @@ const rateScopeGroups = [
                   <input type="text" maxlength="40" inputmode="decimal" placeholder="Price" data-rate-amount data-scope-price />
                 </span>
               </label>
-              <button class="creator-join-form__remove" type="button" data-remove-scope aria-label="Remove scope">
+              <button class="creator-join-form__remove" type="button" data-remove-scope aria-label="Remove rate">
                 ×
               </button>
             </div>
@@ -496,8 +496,8 @@ const rateScopeGroups = [
         <span>Collaborations</span>
       </summary>
       <section class="creator-join-form__section">
-        <h2>Past Brand Work</h2>
-        <p class="creator-join-form__hint">Optional · helps brands see your experience.</p>
+        <h2>Brands you worked with</h2>
+        <p class="creator-join-form__hint">Optional. Show brands your past work.</p>
         <div class="creator-join-form__collabs" data-creator-collabs></div>
         <button class="creator-join-form__add" type="button" data-add-collab>
           <span aria-hidden="true">+</span> Add Collaboration
@@ -530,7 +530,7 @@ const rateScopeGroups = [
       </summary>
       <section class="creator-join-form__section">
         <h2>Notes</h2>
-        <p class="creator-join-form__hint">Optional · audience size, markets, exclusivity, etc.</p>
+        <p class="creator-join-form__hint">Optional. Tell us followers, cities, or anything important.</p>
         <label class="creator-join-form__field">
           <span class="sr-only">Notes for the team</span>
           <textarea name="notes" rows="3" maxlength="1500" placeholder="Anything else we should know"></textarea>
