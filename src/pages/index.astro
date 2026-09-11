@@ -276,83 +276,174 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     </div>
   </section>
 
-  <section id="services" class="home-section home-services" aria-labelledby="services-title">
-    <div class="home-container">
+  <section id="services" class="home-section home-services" aria-labelledby="services-title" data-services-system>
+    <div class="home-container home-container--wide">
       <header class="home-section-heading">
         <h2 id="services-title">Core Services</h2>
-        <p>Combining performance-driven advertising <br class="break-mobile" />with authentic influence.</p>
+        <p>One content system. Tap a glowing node to zoom — tap empty space to return.</p>
       </header>
 
-      <div class="service-story">
-        <div class="service-story__copy">
-          <p class="home-kicker">Brand Awareness &amp; Growth</p>
-          <h3>Influencer Marketing</h3>
-          <p>
-            Transforming authentic content into premium brand authority.
-          </p>
-          <ul>
-            <li>
-              <strong>Full-Funnel Strategy</strong>
-              Integrated solutions spanning campaign planning, influencer activation,
-              paid media, and social management.
-            </li>
-            <li>
-              <strong>Creator Partnerships</strong>
-              Precise influencer selection, tailored content direction, and data-backed
-              performance tracking.
-            </li>
-            <li>
-              <strong>Omnichannel Execution</strong>
-              Seamless delivery across digital platforms, localized PR, and experiential
-              offline events.
-            </li>
-          </ul>
-        </div>
-        <figure class="service-story__visual">
-          <img
-            src="/images/home-figma/service-influencer.jpg"
-            alt="MOCA influencer marketing character and content creation setup"
-            width="1592"
-            height="1177"
-            loading="lazy"
-          />
-        </figure>
-      </div>
+      <div class="services-orbit" data-services-orbit data-orbit-active="overview">
+        <div class="services-orbit__system" data-orbit-system>
+          <div class="services-orbit__halo" aria-hidden="true"></div>
+          <div class="services-orbit__ring" aria-hidden="true"></div>
 
-      <div class="service-story service-story--reverse">
-        <div class="service-story__copy">
-          <p class="home-kicker">User Acquisition</p>
-          <h3>Performance Advertising</h3>
-          <p>
-            Penetrating local markets with precision-tuned user acquisition.
-          </p>
-          <ul>
-            <li>
-              <strong>Rapid Scale via Direct Traffic</strong>
-              Fast-track growth with high-intent, fraud-free traffic directly from OEMs
-              and premium developers.
+          <div class="services-orbit__core" data-orbit-core>
+            <div class="services-orbit__face is-active" data-orbit-face="overview" aria-hidden="false">
+              <img
+                src="/images/home-figma/service-integrated.png"
+                alt=""
+                width="420"
+                height="310"
+                loading="lazy"
+              />
+              <div class="services-orbit__face-copy">
+                <p>Content-Driven O2O</p>
+                <h3>Integrated Marketing</h3>
+                <ul class="services-orbit__mini">
+                  <li><strong>Influencer</strong><span>Creator partnerships</span></li>
+                  <li><strong>Performance</strong><span>Measurable growth</span></li>
+                  <li><strong>Community</strong><span>Clubs &amp; alliances</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="services-orbit__face" data-orbit-face="influencer" aria-hidden="true">
+              <img
+                src="/images/home-figma/service-influencer.png"
+                alt="MOCA influencer marketing character"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <div class="services-orbit__face-copy">
+                <p>From Influencer Network</p>
+                <h3>Influencer Marketing</h3>
+                <ul class="services-orbit__mini">
+                  <li><strong>In-house Platform</strong><span>Creator discovery</span></li>
+                  <li><strong>Local Team</strong><span>On-ground execution</span></li>
+                  <li><strong>Guaranteed Outcomes</strong><span>Clear targets</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="services-orbit__face" data-orbit-face="performance" aria-hidden="true">
+              <img
+                src="/images/home-figma/service-performance.png"
+                alt="MOCA performance advertising character"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <div class="services-orbit__face-copy">
+                <p>From Performance</p>
+                <h3>Performance Advertising</h3>
+                <ul class="services-orbit__mini">
+                  <li><strong>Direct Traffic</strong><span>OEM &amp; premium</span></li>
+                  <li><strong>In-house Platform</strong><span>CPI / CPA / ROAS</span></li>
+                  <li><strong>MMP Integration</strong><span>AppsFlyer &amp; more</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="services-orbit__face" data-orbit-face="community" aria-hidden="true">
+              <img
+                src="/images/home-figma/service-integrated.png"
+                alt=""
+                width="420"
+                height="310"
+                loading="lazy"
+              />
+              <div class="services-orbit__face-copy">
+                <p>From Community</p>
+                <h3>Community</h3>
+                <ul class="services-orbit__mini">
+                  <li><strong>Clubs &amp; Alliances</strong><span>Details coming soon</span></li>
+                  <li><strong>Local Networks</strong><span>Details coming soon</span></li>
+                  <li><strong>Brand Communities</strong><span>Details coming soon</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <ul class="services-orbit__nodes">
+            <li class="services-orbit__slot services-orbit__slot--1">
+              <span class="services-orbit__node">
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 19V5h4v14H5Zm10 0V9h4v10h-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 11h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </span>
+                <strong>Strategy &amp; Growth</strong>
+                <small>Market entry</small>
+              </span>
             </li>
-            <li>
-              <strong>In-House Platform</strong>
-              Powered by proprietary algorithms precision-tuned to hit your CPI, CPA,
-              and ROAS targets.
+            <li class="services-orbit__slot services-orbit__slot--2">
+              <button
+                class="services-orbit__node services-orbit__node--live"
+                type="button"
+                data-orbit-select="influencer"
+                aria-pressed="false"
+                aria-label="Influencer Network, tap to zoom"
+              >
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.7"/><circle cx="5.5" cy="16" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="18.5" cy="16" r="2.2" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 10.5 7 14m5.5-3.5 2.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </span>
+                <strong>Influencer Network</strong>
+                <small data-orbit-hint>Tap to zoom</small>
+                <span class="services-orbit__tap" aria-hidden="true">Tap</span>
+              </button>
             </li>
-            <li>
-              <strong>Seamless MMP Integration</strong>
-              Native connection with major MMPs (AppsFlyer, Adjust, Kochava, Singular)
-              for real-time attribution.
+            <li class="services-orbit__slot services-orbit__slot--3">
+              <span class="services-orbit__node">
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M7 20V9l5-4 5 4v11" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                </span>
+                <strong>Mall &amp; Retail</strong>
+                <small>Pop-ups</small>
+              </span>
+            </li>
+            <li class="services-orbit__slot services-orbit__slot--4">
+              <button
+                class="services-orbit__node services-orbit__node--live"
+                type="button"
+                data-orbit-select="performance"
+                aria-pressed="false"
+                aria-label="Performance, tap to zoom"
+              >
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="12" r="7.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
+                </span>
+                <strong>Performance</strong>
+                <small data-orbit-hint>Tap to zoom</small>
+                <span class="services-orbit__tap" aria-hidden="true">Tap</span>
+              </button>
+            </li>
+            <li class="services-orbit__slot services-orbit__slot--5">
+              <span class="services-orbit__node">
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6 7.5h12v11H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 7.5V5.8h6v1.7M8.5 11h7M8.5 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <strong>PR &amp; Outdoor</strong>
+                <small>Local media</small>
+              </span>
+            </li>
+            <li class="services-orbit__slot services-orbit__slot--6">
+              <button
+                class="services-orbit__node services-orbit__node--live"
+                type="button"
+                data-orbit-select="community"
+                aria-pressed="false"
+                aria-label="Community, tap to zoom"
+              >
+                <span class="services-orbit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="8" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="16.5" r="2.3" stroke="currentColor" stroke-width="1.6"/><path d="M10 11.5 11.2 14.2M14 11.5 12.8 14.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <strong>Community</strong>
+                <small data-orbit-hint>Tap to zoom</small>
+                <span class="services-orbit__tap" aria-hidden="true">Tap</span>
+              </button>
             </li>
           </ul>
         </div>
-        <figure class="service-story__visual">
-          <img
-            src="/images/home-figma/service-performance.jpg"
-            alt="MOCA performance advertising character aiming at a growth target"
-            width="1499"
-            height="1049"
-            loading="lazy"
-          />
-        </figure>
       </div>
     </div>
   </section>
@@ -1244,4 +1335,65 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeKolplanetDemo();
   });
+
+  const servicesSystem = document.querySelector<HTMLElement>('[data-services-system]');
+  if (servicesSystem) {
+    const orbit = servicesSystem.querySelector<HTMLElement>('[data-services-orbit]');
+    const faces = servicesSystem.querySelectorAll<HTMLElement>('[data-orbit-face]');
+    const selectors = servicesSystem.querySelectorAll<HTMLButtonElement>('[data-orbit-select]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeKey = orbit?.dataset.orbitActive || 'overview';
+
+    const activate = (key: string) => {
+      if (!orbit) return;
+      const changed = key !== activeKey;
+      activeKey = key;
+      orbit.setAttribute('data-orbit-active', key);
+
+      faces.forEach((face) => {
+        const active = face.dataset.orbitFace === key;
+        face.classList.toggle('is-active', active);
+        face.setAttribute('aria-hidden', String(!active));
+      });
+
+      selectors.forEach((button) => {
+        const active = button.dataset.orbitSelect === key;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+        const hint = button.querySelector<HTMLElement>('[data-orbit-hint]');
+        if (hint) {
+          hint.textContent = active ? 'Zoomed in' : 'Tap to zoom';
+        }
+        if (active && changed && !reducedMotion) {
+          button.classList.remove('is-firing');
+          void button.offsetWidth;
+          button.classList.add('is-firing');
+        }
+      });
+    };
+
+    selectors.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const key = button.dataset.orbitSelect;
+        if (!key) return;
+        activate(key === activeKey ? 'overview' : key);
+      });
+    });
+
+    orbit?.addEventListener('click', (event) => {
+      if (activeKey === 'overview') return;
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      if (target.closest('[data-orbit-select]')) return;
+      if (target.closest('[data-orbit-face].is-active')) return;
+      activate('overview');
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && activeKey !== 'overview') {
+        activate('overview');
+      }
+    });
+  }
 </script>
